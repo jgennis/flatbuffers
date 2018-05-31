@@ -12,7 +12,6 @@ exports_files([
 
 FLATBUFFERS_COPTS = [
     "-Wno-implicit-fallthrough",
-    "-linclude",
 ]
 
 # Public flatc library to compile flatbuffer files at runtime.
