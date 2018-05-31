@@ -76,6 +76,11 @@
   #endif
 #endif
 
+// Weak linkage is culled by VS & doesn't work on cygwin.
+#if defined(_WIN32) || defined(__CYGWIN__)
+  #define FLATBUFFERS_NO_WEAK_LINKAGE 1
+#endif  // defined(_WIN32) || defined(__CYGWIN__)
+
 // The wire format uses a little endian encoding (since that's efficient for
 // the common platforms).
 #if defined(__s390x__)
